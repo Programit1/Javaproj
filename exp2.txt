@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input
+        System.out.print("Customer: ");
+        String customer = sc.nextLine();
+
+        System.out.print("Feedback: ");
+        String feedback = sc.nextLine();
+
+        System.out.print("Keyword: ");
+        String keyword = sc.nextLine();
+
+        // Validate feedback
+        if (feedback.isEmpty()) {
+            System.out.println("Invalid Feedback Message");
+            return;
+        }
+
+        if (feedback.length() > 500) {
+            System.out.println("Invalid Feedback Message");
+            return;
+        }
+
+        // Count characters
+        int characters = feedback.length();
+
+        // Count words
+        String trimmedFeedback = feedback.trim();
+        int words = trimmedFeedback.isEmpty()
+                ? 0
+                : trimmedFeedback.split("\\s+").length;
+
+        // Case-insensitive keyword search
+        String lowerFeedback = feedback.toLowerCase();
+        String lowerKeyword = keyword.toLowerCase();
+
+        int count = 0;
+        int index = 0;
+
+        while ((index = lowerFeedback.indexOf(lowerKeyword, index)) != -1) {
+            count++;
+            index += lowerKeyword.length();
+        }
+
+        // Output
+        System.out.println("Customer: " + customer);
+        System.out.println("Characters = " + characters);
+        System.out.println("Words = " + words);
+
+        if (count > 0) {
+            System.out.println("Keyword Found = " + count);
+        } else {
+            System.out.println("Keyword Not Found");
+        }
+
+        sc.close();
+    }
+}
