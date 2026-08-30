@@ -1,4 +1,4 @@
-package lab4;
+import java.util.Scanner;
 
 class Product {
     private int productId;
@@ -21,19 +21,26 @@ class Product {
     }
 }
 
-public class ProductDemo {
+public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
         Product p = new Product();
 
-        p.setProductId(101);
-        p.setPrice(5000);
+        int id = sc.nextInt();
+        double price = sc.nextDouble();
+        double updatedPrice = sc.nextDouble();
+
+        p.setProductId(id);
+        p.setPrice(price);
 
         System.out.println("Product ID: " + p.getProductId());
         System.out.println("Price: " + p.getPrice());
 
-        p.setPrice(5500);
+        p.setPrice(updatedPrice);
 
         System.out.println("Updated Price: " + p.getPrice());
+
+        sc.close();
     }
 }
