@@ -1,4 +1,4 @@
-package lab4;
+import java.util.Scanner;
 
 class Employee {
     int employeeId;
@@ -16,11 +16,21 @@ class Employee {
     }
 }
 
-public class EmployeeDemo {
+public class Main {
     public static void main(String[] args) {
-        Employee e1 = new Employee(201, "Arjun");
+        Scanner sc = new Scanner(System.in);
 
-        e1.name = "Arjun Kumar";
+        int id = sc.nextInt();
+        sc.nextLine();
+        String name = sc.nextLine();
+
+        Employee e1 = new Employee(id, name);
+
+        String updatedName = sc.nextLine();
+        e1.name = updatedName;
+
         e1.displayDetails();
+
+        sc.close();
     }
 }
