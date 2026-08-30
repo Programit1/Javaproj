@@ -1,0 +1,39 @@
+package lab4;
+
+class Product {
+    private int productId;
+    private double price;
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+}
+
+public class ProductDemo {
+    public static void main(String[] args) {
+
+        Product p = new Product();
+
+        p.setProductId(101);
+        p.setPrice(5000);
+
+        System.out.println("Product ID: " + p.getProductId());
+        System.out.println("Price: " + p.getPrice());
+
+        p.setPrice(5500);
+
+        System.out.println("Updated Price: " + p.getPrice());
+    }
+}
