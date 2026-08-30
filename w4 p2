@@ -1,0 +1,26 @@
+package lab4;
+
+class Employee {
+    int employeeId;
+    String name;
+
+    Employee(int employeeId, String name) {
+        this.employeeId = employeeId;
+        this.name = name;
+    }
+
+    void displayDetails() {
+        System.out.println("Employee ID: " + employeeId);
+        System.out.println("Name: " + name);
+        System.out.println("Employee Record Updated");
+    }
+}
+
+public class EmployeeDemo {
+    public static void main(String[] args) {
+        Employee e1 = new Employee(201, "Arjun");
+
+        e1.name = "Arjun Kumar";
+        e1.displayDetails();
+    }
+}
