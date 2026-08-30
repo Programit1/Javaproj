@@ -1,12 +1,11 @@
-package lab4;
+import java.util.Scanner;
 
-class CollegeStudent {
+class Student {
     int studentId;
     String name;
-
     static String collegeName = "Alliance University";
 
-    CollegeStudent(int studentId, String name) {
+    Student(int studentId, String name) {
         this.studentId = studentId;
         this.name = name;
     }
@@ -18,15 +17,27 @@ class CollegeStudent {
     }
 }
 
-public class StaticDemo {
+public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        CollegeStudent s1 = new CollegeStudent(101, "Rahul");
-        CollegeStudent s2 = new CollegeStudent(102, "Priya");
-        CollegeStudent s3 = new CollegeStudent(103, "Aman");
+        int id1 = sc.nextInt();
+        String name1 = sc.next();
+
+        int id2 = sc.nextInt();
+        String name2 = sc.next();
+
+        int id3 = sc.nextInt();
+        String name3 = sc.next();
+
+        Student s1 = new Student(id1, name1);
+        Student s2 = new Student(id2, name2);
+        Student s3 = new Student(id3, name3);
 
         s1.displayDetails();
         s2.displayDetails();
         s3.displayDetails();
+
+        sc.close();
     }
 }
